@@ -103,56 +103,11 @@ const Checkout = () => {
 
 
 
-        // 1
-        // let apitoken = localStorage.getItem('api_token')
-        // console.log(apitoken)
-        // try {
-        //     const response = await axios.post('http://127.0.0.1:8000/api/updatecart', products, {
-        //         headers: {
-        //             Authorization: `Bearer ${apitoken}`,
-        //             // 'Content-Type': 'application/json',
-        //             // 'Accept': 'application/json', 
-        //         },
-        //         // withCredentials: true, // Add this line
-        //         });
+        
 
                 
         
-        //     if (response.status === 201) {
-
-        //     // const stripe = await stripePromise
-        //     // const response = await fetch('/api/payment', {
-        //     //     method: 'POST',
-        //     //     headers: {
-        //     //         'Content-Type': 'application/json'
-        //     //     },
-        //     //     body: JSON.stringify({item:products, email:session?.user?.email})
-        //     // })
-        //     // const checkoutSession = await response.json()
-    
-        //     // // Redirecting user to Stripe Checkout
-        //     // const result = await stripe?.redirectToCheckout({
-        //     //     sessionId:checkoutSession.id
-        //     // })
-        //     // if(result.error) {
-        //     //     alert(result?.error.message)
-        //     // }
-
-        //     // Clear the cart in Redux
-        //     // dispatch(clearCart());
-        //     console.log(apitoken)
-        //     } else {
-        //     alert('Failed to complete the checkout process. Please try again later.');
-        //     }
-        // } catch (error) {
-        //     // Handle network errors or other exceptions
-        //     console.error('Error during checkout:', error);
-        //     alert('An error occurred during checkout. Please try again later.');
-        // }
-
-
-
-
+       
         
   
 
@@ -199,17 +154,6 @@ const Checkout = () => {
 
                         {/* <div> */}
                             {products.map((item, i) => (
-                                // <CheckoutProduct
-                                //     key={i}
-                                //     id={item.id}
-                                //     title={item.title}  
-                                //     rating={item.rating}
-                                //     price={item.price}
-                                //     description={item.description}
-                                //     category={item.category}
-                                //     image={item.image}
-                                //     hasPrime={item.hasPrime}
-                                // />
 
 
                                     <div className='grid grid-cols-5 border-b-[1px] border-b-gray-200 pb-10 mb-10'>
@@ -218,14 +162,7 @@ const Checkout = () => {
                                         {/* Middle */}
                                         <div className='col-span-4 mx-5'>
                                             <p className='font-medium'>{item.title}</p>
-                                            {/* <div className='flex'>
-                                                {Array(item.rating)
-                                                    .fill()
-                                                    .map((_,i) => (
-                                                        <StarIcon className='h-5 text-yellow-500'/>
-                                                    ))
-                                                }
-                                            </div> */}
+                                            
                                             
                                             <p className='text-sm my-2 line-clamp-3 text-justify'>{item.description}</p>
                                             
@@ -236,7 +173,6 @@ const Checkout = () => {
 
                                             <div className='flex space-x-16 mt-3'>
                                                 <div className='flex flex-col space-y-2 my-auto '>
-                                                    {/* <button className='button' onClick={addItemToBasket}>Add to basket</button> */}
                                                     <div className='bg-[#F0F2F2] flex justify-center items-center gap-3 px-2 py-2 mb-2 drop-shadow-lg rounded-md'>
                                                     <p className=''>Quantity:</p>
                                                     <p 
@@ -260,17 +196,7 @@ const Checkout = () => {
                                                         className='bg-red-500 text-white flex justify-center items-center gap-3 px-2 py-2 mb-2 hover:bg-red-700 active:bg-red-900 drop-shadow-lg rounded-md'>Delete item</button>
                                                 </div>
                                             
-                                                {/* {item.hasPrime && (
-                                                <div className='flex items-center space-x-2'>
-                                                    <Image
-                                                    loading='lazy' 
-                                                    src={prime}
-                                                    width={99}
-                                                    height={99}  
-                                                    />
-                                                    <p className='text-xs'>FREE Next-day Delivery</p>
-                                                </div>
-                                                )} */}
+                                               
                                             </div>
                                             
                                         </div>
@@ -318,11 +244,8 @@ const Checkout = () => {
                             <button 
                                 onClick={handleCheckout}
                                 role='link'
-                                // disabled={!session}
-                                // className={`button mt-2 font-semibold text-md ${!session && 'from-gray-300 to-gray-500  border-gray-200 text-gray-300 cursor-not-allowed'}`}
                                 className='button mt-2 font-semibold text-md'
                             >
-                                {/* {!session ? 'Sign in to checkout' : 'Proceed to checkout'} */}
                                 <p>Sign in to checkout</p>
                             </button>
                         </div>
