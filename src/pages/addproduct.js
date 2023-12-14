@@ -83,40 +83,7 @@ const addproduct = () => {
             setErrFile('Upload product picture')
         }
 
-        // if(title && description && price  && category && file) {
-        //     console.log(title, description, price, category, file)
-        // }
         
-        // // setTitle('')
-        // // setDescription('')
-        // // setPrice('')
-        // // setCategory('')
-
-        // const data = {
-        //     title : title,
-        //     description : description,
-        //     price : price,
-        //     category : category,
-        //     file : file,
-        // }
-
-        // try {
-        //     const response = await axios.post('http://127.0.0.1:8000/api/addproduct', data, {
-        //         headers: {
-        //             'Content-Type': 'application/json'
-        //         }
-        //     })
-
-        //     if (response.status === 200) {
-        //         alert('Data has been saved');
-        //       } else {
-        //         alert('An error occurred while saving data');
-        //       }
-
-        // } catch (error) {
-        //     console.error('Error:', error);
-        //     alert('An error occurred while saving data');
-        //   }
 
         // const apiToken = localStorage.getItem('api_token');
 
@@ -150,27 +117,7 @@ const addproduct = () => {
     }
 
 
-    // axios.get('/sanctum/csrf-cookie').then(()=> {
-        // const response = axios.post('http://127.0.0.1:8000/api/addproduct', formData).then(response=>{
-        //     // if(response.data.error) {
-        //     //     console.log(response.data.error)
-        //     // } else {
-        //     //     console.log('success')
-        //     // }
-        //     if (response.status === 200) {
-        //         alert('Data has been saved');
-        //     } else {
-        //         alert('An error occurred while saving data');
-        //     }
-        // });
-    // })
-        
-
-        // if (response.status === 200) {
-        //     alert('Data has been saved');
-        // } else {
-        //     alert('An error occurred while saving data');
-        // }
+    
     
 
 
@@ -181,14 +128,7 @@ const addproduct = () => {
 
         <div className='w-full bg-gray-100 pb-10'>
             <form className='w-[700px] mx-auto flex flex-col items-center'>
-                {/* <div onClick={() => router.push('/')} className='my-5 cursor-pointer'>
-                    <Image 
-                        src={logodark}
-                        width={150}
-                        height={40}
-                        objectFit='contain'
-                    />    
-                </div> */}
+               
                 
                 <div className='w-full border border-zinc-200 my-5 px-9 py-6'>
                     <h2 className='font-medium text-center text-3xl mb-8'>Add Product</h2>
@@ -210,12 +150,7 @@ const addproduct = () => {
                         </div>
                         <div>
                             <p className='font-medium pb-1'>Description</p>
-                            {/* <input 
-                                onChange={handleEmail}
-                                value={email}
-                                type="email" 
-                                className='border font-medium lowercase rounded-sm border-gray-400 px-2 py-1 w-full outline-none focus:drop-shadow-md'
-                            /> */}
+                           
                             <textarea onChange={handleDescription} value={description} className='font-medium rounded-sm border-gray-400 focus:drop-shadow-md border px-3 py-2 resize-none outline-none w-full h-28' name="" id="" cols="30" rows="10"></textarea>
                             {errDescription && (
                                 <p className='text-red-500 text-sm font-semibold pt-1'>
@@ -231,7 +166,6 @@ const addproduct = () => {
                                 value={price}
                                 type="text"
                                 className='border font-medium rounded-sm placeholder:normal-case border-gray-400 px-3 py-2 w-full outline-none focus:drop-shadow-md'
-                                // style={{ fontVariant: 'normal', fontFeatureSettings: "'cpsp', 'ss01'", letterSpacing: '0.25em' }}  
                             />
                             {errPrice && (
                                 <p className='text-red-500 text-sm font-semibold pt-1'>
@@ -247,7 +181,6 @@ const addproduct = () => {
                                 value={category}
                                 type="text"
                                 className='border font-medium rounded-sm border-gray-400 px-3 py-2 w-full outline-none focus:drop-shadow-md'
-                                // style={{ fontVariant: 'normal', fontFeatureSettings: "'cpsp', 'ss01'", letterSpacing: '0.25em' }}  
                             />
                             {errCategory && (
                                 <p className='text-red-500 text-sm font-semibold pt-1'>
@@ -262,7 +195,6 @@ const addproduct = () => {
                                 onChange={handleImage}
                                 type="file"
                                 className='border rounded-sm border-gray-400 px-2 py-1 w-full outline-none focus:drop-shadow-md'
-                                // style={{ fontVariant: 'normal', fontFeatureSettings: "'cpsp', 'ss01'", letterSpacing: '0.25em' }}  
                             />
                             {errFile && (
                                 <p className='text-red-500 text-sm font-semibold pt-1'>
@@ -270,13 +202,8 @@ const addproduct = () => {
                                     {errFile}
                                 </p>
                             )}
-
-                            {/* {file && (
-                                <img className='w-[150px] h-16' src={URL.createObjectURL(file)} alt="" />
-                            )} */}
                         </div>
                     </div>
-                    {/* <p className=' mt-2 mb-4'>Passwords must be at least 6 characters.</p> */}
                     <div className='flex flex-col items-center'>
                         <button
                             onClick={handleaddproduct}
