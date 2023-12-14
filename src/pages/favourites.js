@@ -94,17 +94,6 @@ const Checkout = () => {
 
                         {/* <div> */}
                             {products.map((item, i) => (
-                                // <CheckoutProduct
-                                //     key={i}
-                                //     id={item.id}
-                                //     title={item.title}  
-                                //     rating={item.rating}
-                                //     price={item.price}
-                                //     description={item.description}
-                                //     category={item.category}
-                                //     image={item.image}
-                                //     hasPrime={item.hasPrime}
-                                // />
 
 
                                     <div className='grid grid-cols-5 border-b-[1px] border-b-gray-200 pb-10 mb-10'>
@@ -113,21 +102,12 @@ const Checkout = () => {
                                         {/* Middle */}
                                         <div className='col-span-4 mx-5'>
                                             <p className='font-medium'>{item.title}</p>
-                                            {/* <div className='flex'>
-                                                {Array(item.rating)
-                                                    .fill()
-                                                    .map((_,i) => (
-                                                        <StarIcon className='h-5 text-yellow-500'/>
-                                                    ))
-                                                }
-                                            </div> */}
                                             
                                             <p className='text-sm my-2 line-clamp-3 text-justify'>{item.description}</p>
                                             
                                             
                                             <div className='flex mt-5 justify-between'>
                                                 <p>Unit price : <span className='font-semibold'><Currency quantity={item.price}/></span></p>
-                                                {/* <p className='font-semibold'>${item.price * item.quantity}</p> */}
                                             </div>
 
                                             <button
