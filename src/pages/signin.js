@@ -33,18 +33,6 @@ const signin = () => {
         .match(/^[^ ]+@[^ ]+\.[a-z]{2,3}$/)
 }
 
-
-// if (typeof window !== 'undefined') {
-//   const username = localStorage.getItem('user_name')
-// }
-  
-  // useEffect(()=> {
-  //   if(localStorage.getItem('user_info')) {
-  //     router.push('/')
-  //   }
-  // }, [])
-
-
   // Submit button
   async function handleLogIn (e) {
     e.preventDefault()
@@ -61,20 +49,10 @@ const signin = () => {
     if(email && password) {
       let item={email, password}
       try {
-          // await axios.get('http://127.0.0.1:8000/api/sanctum/csrf-cookie')
 
-
-          // const response = await axios.post(`${process.env.NEXT_APP_BASE_API_URL}/signin`, item, {
-          //   withCredentials: true
-          // })
-
-          const response = await axios.post('http://127.0.0.1:8000/api/signin', item, {
-            // withCredentials: true
-          })
+          const response = await axios.post('http://127.0.0.1:8000/api/signin', item)
         
         if(response.status === 200) {
-          // console.log(response)
-          // const { token, user, error } = response.data;
           localStorage.setItem('user_info', response.data.user.name)
           localStorage.setItem('user_email', response.data.user.email)
           localStorage.setItem('user_id', response.data.user.id)
@@ -91,7 +69,6 @@ const signin = () => {
           setsigninError(error.response.data.error);
           console.log(error.response.data.error)
       } else {
-        // Handle other error scenarios here
         // console.log(error.response.data.error);
         setsigninError('Error logging in');
       }
